@@ -1,5 +1,10 @@
+import { Button } from "../components/Button";
+
 export default function Home() {
   return (
-    <p>teste</p>
+    <>
+    <img src='./banner.jpg'/>
+    <Button texto={'Clique aqui'}/>
+    </>
   )
 }
