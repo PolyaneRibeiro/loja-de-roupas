@@ -1,10 +1,10 @@
 import React from 'react';
 import * as S from './style'
 
-export const Button = ({texto}) => {
+export const Button = ({text}) => {
     return (
         <S.Button>
-            {texto}
+            {text}
         </S.Button>
     )
 }

@@ -8,5 +8,8 @@ export const Button = styled.button`
     border: none;
     border-radius: 15px;
     text-transform: uppercase;
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 18px;
 `;
 
