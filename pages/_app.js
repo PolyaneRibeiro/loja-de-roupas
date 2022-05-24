@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Loja de Roupas</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Oswald:wght@700&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Oswald:wght@700&display=swap" rel="stylesheet" />
       </Head>
       <Menu />
       <Component {...pageProps} />
