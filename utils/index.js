@@ -20,3 +20,24 @@ export const mockPecasExclusivas = [
         img: './jeans.jpg'
     },
 ]
+
+export const mockMarcas = [
+    {
+        logo: './marca1.jpg'
+    },
+    {
+        logo: './marca2.jpg'
+    },
+    {
+        logo: './marca3.jpg'
+    },
+    {
+        logo: './marca4.jpg'
+    },
+    {
+        logo: './marca5.jpg'
+    },
+    {
+        logo: './marca6.jpg'
+    },
+]

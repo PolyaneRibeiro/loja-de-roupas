@@ -8,4 +8,6 @@ export const ContainerRose = styled.div`
 export const Section = styled.div`
    display: flex;
    justify-content: space-between;
+   align-items: center;
+   margin-bottom: ${({ bottom }) => bottom ? bottom : '0'}   
 `;

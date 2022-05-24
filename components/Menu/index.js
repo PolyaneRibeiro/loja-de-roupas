@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from '../Container';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import * as S from './style'
 
 export const Menu = () => {
@@ -12,6 +13,7 @@ export const Menu = () => {
                         <a href='#'>HOME</a>
                         <a href='#'>TENDÊNCIAS</a>
                         <a href='#'>LOJA</a>
+                        <AiOutlineShoppingCart color="#ffafb8" size={30} />
                     </S.BoxMenu>
                 </S.Box>
             </Container>

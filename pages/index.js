@@ -1,11 +1,11 @@
+import React from 'react';
 import { Title } from "../components/Title";
 import { Container } from '../components/Container'
 import { BoxTendencia } from '../components/BoxTendencia'
 import { CardPecasExclusivas } from "../components/CardPecasExclusivas";
-import { mockPecasExclusivas } from '../utils'
+import { mockPecasExclusivas, mockMarcas } from '../utils'
 import * as S from './style'
 
-console.log(mockPecasExclusivas)
 export default function Home() {
   return (
     <>
@@ -35,7 +35,7 @@ export default function Home() {
       />
       <Container>
         <Title text1='Peças' text2='Exclusivas' />
-        <S.Section>
+        <S.Section bottom='70px'>
           {mockPecasExclusivas.map(item => {
             return (
               <CardPecasExclusivas clothing={item.clothing} value={item.value} img={item.img} />
@@ -43,6 +43,13 @@ export default function Home() {
           })}
         </S.Section>
         <Title text1='Marcas' text2='Vendidas' />
+        <S.Section >
+          {mockMarcas.map(item => {
+            return (
+              <img src={item.logo} />
+            )
+          })}
+        </S.Section>
       </Container>
     </>
   )
