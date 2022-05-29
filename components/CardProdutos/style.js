@@ -4,6 +4,7 @@ export const Box = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-bottom: 70px;
 `;
 
 export const Title = styled.p`

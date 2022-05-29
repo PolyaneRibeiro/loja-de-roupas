@@ -5,7 +5,7 @@ import * as S from './style'
 export const Footer = () => {
     return (
         <S.Main>
-            <Container>
+            <Container bottom='0'>
                 <S.Box>
                     <div>
                         <p>Rua Regente Feijó - 187, Roncon |  01130-000 - Ribeirão Pires/SP</p>

@@ -10,9 +10,9 @@ export const Menu = () => {
                 <S.Box>
                     <S.Logo src='./logo.png' />
                     <S.BoxMenu>
-                        <a href='#'>HOME</a>
+                        <a href='/'>HOME</a>
                         <a href='#'>TENDÊNCIAS</a>
-                        <a href='#'>LOJA</a>
+                        <a href='/loja'>LOJA</a>
                         <AiOutlineShoppingCart color="#ffafb8" size={30} />
                     </S.BoxMenu>
                 </S.Box>

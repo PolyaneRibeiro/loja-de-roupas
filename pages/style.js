@@ -8,6 +8,13 @@ export const ContainerRose = styled.div`
 export const Section = styled.div`
    display: flex;
    justify-content: space-between;
+   align-items: ${({ align }) => align ? align : 'center'};
+`;
+
+export const Produtos = styled.div`
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   width: 75%;
    align-items: center;
-   margin-bottom: ${({ bottom }) => bottom ? bottom : '0'}   
 `;
