@@ -11,5 +11,6 @@ export const Button = styled.button`
     font-family: Oswald;
     font-weight: bold;
     font-size: 18px;
+    cursor: pointer;
 `;
 

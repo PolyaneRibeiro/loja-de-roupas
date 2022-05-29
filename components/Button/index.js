@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './style'
 
-export const Button = ({text}) => {
+export const Button = ({text, action}) => {
     return (
-        <S.Button>
+        <S.Button onClick={action}>
             {text}
         </S.Button>
     )

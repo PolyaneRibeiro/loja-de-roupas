@@ -1,27 +1,33 @@
 import React from 'react';
-import { Title } from "../../components/Title";
+import { Titulo } from "../../components/Titulo";
 import { Container } from '../../components/Container'
 import { CardProdutos } from "../../components/CardProdutos";
-import { mockPecasExclusivas} from '../../utils'
+import { mockPecasExclusivas } from '../../utils'
 import { MenuLateral } from '../../components/MenuLateral';
+import { Submit } from '../../utils'
+
 import * as S from '../style'
 
 export default function Loja() {
   return (
     <>
       <Container>
-        <Title text1='Loja' />
+        <Titulo text1='Loja' />
         <S.Section align='start'>
-          <MenuLateral/>
+          <MenuLateral />
           <S.Produtos>
-          {mockPecasExclusivas.map(item => {
-            return (
-              <CardProdutos clothing={item.clothing} value={item.value} img={item.img} />
-            )
-          })}
+            {mockPecasExclusivas.map(item => {
+              return (
+                <CardProdutos
+                  img={item.img}
+                  roupa={item.roupa}
+                  valor={item.valor}
+                  action={() => Submit('/produto')} />
+              )
+            })}
           </S.Produtos>
         </S.Section>
-      
+
       </Container>
     </>
   )

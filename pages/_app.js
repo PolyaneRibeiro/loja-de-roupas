@@ -1,8 +1,7 @@
 import '../styles/globals.css'
 import Head from 'next/head'
 import { Menu } from '../components/Menu'
-import { Container } from '../components/Container'
-import { Footer } from '../components/Footer'
+import { Rodape } from '../components/Rodape'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,7 +14,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Menu />
       <Component {...pageProps} />
-      <Footer />
+      <Rodape />
     </>
   )
 }

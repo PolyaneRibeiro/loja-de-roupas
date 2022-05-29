@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Title = styled.h1`
+export const Titulo = styled.h1`
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;

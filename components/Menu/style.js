@@ -20,6 +20,7 @@ export const BoxMenu = styled.div`
     display: flex;
     width: 350px;
     justify-content: space-between;
+    align-items: center;
 
     a { 
         color: #ffafb8;
@@ -27,4 +28,13 @@ export const BoxMenu = styled.div`
     }
 `;
 
+export const Icon = styled.div`
+background: #ffafb8;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+`;

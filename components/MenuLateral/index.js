@@ -4,7 +4,7 @@ import * as S from './style'
 export const MenuLateral = () => {
     return (
         <S.Main>
-        <S.TitleCategorias>Categorias</S.TitleCategorias>
+        <S.TituloleCategorias>Categorias</S.TituloleCategorias>
         <S.UlCategorias>
             <S.LiCategorias>camisetas</S.LiCategorias>
             <S.LiCategorias>cropet</S.LiCategorias>

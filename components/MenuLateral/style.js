@@ -6,7 +6,7 @@ export const Main = styled.div`
     height: 100%;
 `;
 
-export const TitleCategorias = styled.p`
+export const TituloleCategorias = styled.p`
     font-size: 24px;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;

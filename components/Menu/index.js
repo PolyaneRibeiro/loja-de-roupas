@@ -13,7 +13,9 @@ export const Menu = () => {
                         <a href='/'>HOME</a>
                         <a href='#'>TENDÊNCIAS</a>
                         <a href='/loja'>LOJA</a>
-                        <AiOutlineShoppingCart color="#ffafb8" size={30} />
+                        <S.Icon>
+                        <AiOutlineShoppingCart color="#55474a" size={30} />
+                        </S.Icon>
                     </S.BoxMenu>
                 </S.Box>
             </Container>

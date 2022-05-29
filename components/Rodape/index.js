@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '../Container';
 import * as S from './style'
 
-export const Footer = () => {
+export const Rodape = () => {
     return (
         <S.Main>
             <Container bottom='0'>

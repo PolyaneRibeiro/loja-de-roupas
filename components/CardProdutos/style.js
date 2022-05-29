@@ -7,7 +7,7 @@ align-items: center;
 margin-bottom: 70px;
 `;
 
-export const Title = styled.p`
+export const Titulo = styled.p`
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
@@ -16,7 +16,7 @@ export const Title = styled.p`
     margin: 0;
 `;
 
-export const Value = styled.p`
+export const Valor = styled.p`
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;

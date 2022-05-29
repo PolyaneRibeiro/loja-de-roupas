@@ -4,8 +4,8 @@ import { Button } from '../Button';
 import * as S from './style'
 
 export const BoxTendencia = ({
-    titleCategory,
-    titleTendencia,
+    tituloCategory,
+    tituloTendencia,
     text1,
     text2,
     img,
@@ -20,8 +20,8 @@ export const BoxTendencia = ({
             <S.BoxContent direction={direction} topBox={topBox} alignBox={alignBox}>
                 <div>
                     <S.BoxText>
-                        {titleCategory}
-                        <h2>{titleTendencia}</h2>
+                        {tituloCategory}
+                        <h2>{tituloTendencia}</h2>
                         <p>{text1}</p>
                         <p>{text2}</p>
                     </S.BoxText>
