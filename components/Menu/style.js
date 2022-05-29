@@ -28,13 +28,15 @@ export const BoxMenu = styled.div`
     }
 `;
 
-export const Icon = styled.div`
-background: #ffafb8;
+export const Icon = styled.button`
+    background: #ffafb8;
     border-radius: 100%;
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    border: 0;
+    cursor: pointer;
 `;
+
