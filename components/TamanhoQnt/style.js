@@ -2,6 +2,11 @@ import styled from 'styled-components'
 
 export const Main = styled.div`
    margin-bottom: 30px;
+   display: flex;
+`;
+
+export const Box = styled.div`
+   margin-right: 30px;
 `;
 
 export const Section = styled.div`
@@ -13,7 +18,6 @@ export const Section = styled.div`
 export const SubTitulo = styled.p`
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
-    font-weight: bold;
     font-size: 20px;
     color: #ff9999;
     margin-bottom: 10px;
@@ -22,7 +26,6 @@ export const SubTitulo = styled.p`
 export const Tamanhos = styled.button`
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
-    font-weight: bold;
     font-size: 20px;
     color: #988084;
     border: 1px solid #988084;
@@ -42,4 +45,19 @@ export const Tamanhos = styled.button`
         color: #fff;
         border: 0;
     }
+`;
+
+export const InputQnt = styled.input`
+    font-family: 'Oswald', sans-serif;
+    color: #988084;
+    border: 1px solid #988084;
+    width: 40px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+
+    :focus-visible {
+        outline-color: #ff9999;
+      }
+
 `;

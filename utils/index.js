@@ -11,7 +11,7 @@ export const mockPecasExclusivas = [
     },
     {
         roupa: 'BOTA CHICO BENTO',
-        value: 'R$199,99',
+        valor: 'R$199,99',
         img: './bota.jpg'
     },
     {

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 //geral
 export const Section = styled.div`
    display: flex;
-   justify-content: 'space-between'};
+   justify-content: space-between;
    align-items: ${({ align }) => align ? align : 'center'};
 `;
 
@@ -31,7 +31,6 @@ export const Conteudo = styled.div`
 export const Valor = styled.p`
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
-    font-weight: bold;
     font-size: 40px;
     color: #988084;
     margin: 0;

@@ -9,7 +9,6 @@ export const Main = styled.div`
 export const TituloleCategorias = styled.p`
     font-size: 24px;
     font-family: 'Oswald', sans-serif;
-    font-weight: bold;
     background: #988084;
     text-transform: uppercase;
     color: #fde3e3;

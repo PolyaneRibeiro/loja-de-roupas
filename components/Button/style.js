@@ -9,7 +9,6 @@ export const Button = styled.button`
     border-radius: 15px;
     text-transform: uppercase;
     font-family: Oswald;
-    font-weight: bold;
     font-size: 18px;
     cursor: pointer;
 `;
