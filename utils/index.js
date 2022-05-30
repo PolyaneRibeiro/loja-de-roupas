@@ -9,6 +9,7 @@ export const mockPecasExclusivas = [
         valor: 'R$209,90',
         img: './blazer.jpg'
     },
+
     {
         roupa: 'BOTA CHICO BENTO',
         valor: 'R$199,99',

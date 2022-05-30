@@ -8,7 +8,7 @@ export const Menu = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <>
+        <> <ModalCarrinho open={open} close={() => setOpen(false)} />
             <S.Main>
                 <Container>
                     <S.Box>
@@ -24,9 +24,8 @@ export const Menu = () => {
                     </S.Box>
                 </Container>
             </S.Main>
-            <Container>
-            <ModalCarrinho open={open} close={() => setOpen(false)} />
-            </Container>
+
+
         </>
     )
 }
