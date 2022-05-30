@@ -19,7 +19,7 @@ export const BoxCarrinho = styled.div`
     width: 300px;
     position: absolute;
     top: 118px;
-    padding: 0 10px 15px 10px;
+    padding: 5px 15px 15px 15px;
 
     :before{
     top: -10px;
