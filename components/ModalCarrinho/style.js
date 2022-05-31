@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const Background = styled.div`
+    position: fixed;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100vh;
+`;
+
 export const MainCarrinho = styled.div`
     display: flex;
     justify-content: flex-end;
@@ -7,19 +14,15 @@ export const MainCarrinho = styled.div`
     margin: 0 auto;
 `;
 
-export const Background = styled.div`
-    position: absolute;
-    background: rgba(0,0,0,0.7);
-    width: 100%;
-    height: 100vh;
-`;
-
 export const BoxCarrinho = styled.div`
     background: #fff;
     width: 300px;
     position: absolute;
     top: 118px;
-    padding: 5px 15px 15px 15px;
+    padding: 5px 0 15px 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 
     :before{
     top: -10px;
@@ -63,6 +66,21 @@ export const Valor = styled.p`
     margin: 0;
     color: #988084;
 `;
+
+export const Quantidade = styled.p`
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    color: #988084;
+`;
+
+export const Conteudo = styled.div`
+    display: flex;
+    width: 210px;
+    justify-content: space-between;
+    align-items: center;
+`;
+
 
 
 
