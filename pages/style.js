@@ -3,7 +3,7 @@ import styled from 'styled-components'
 //geral
 export const Section = styled.div`
    display: flex;
-   justify-content: space-between;
+   justify-content: ${({ justify }) => justify ? justify : 'space-between'};
    align-items: ${({ align }) => align ? align : 'center'};
 `;
 
@@ -38,4 +38,8 @@ export const Valor = styled.p`
 
 export const ImgRoupa = styled.img`
     margin-top: 50px;
+`;
+
+export const Descricao = styled.p`
+    line-height: 22px;    
 `;

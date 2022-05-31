@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios'
 import { Titulo } from "../components/Titulo";
 import { Container } from '../components/Container'
 import { BoxTendencia } from '../components/BoxTendencia'
 import { CardProdutos } from "../components/CardProdutos";
-import { mockPecasExclusivas, mockMarcas } from '../utils'
+import { Submit, mockMarcas } from '../utils'
 import * as S from './style'
 
 export default function Home() {
+  const [roupas, SetRoupas] = useState()
+
+  useEffect(() => {
+    axios.get('https://poly-2af89-default-rtdb.firebaseio.com/loja.json')
+      .then((response) => SetRoupas(Object.entries(response.data)))
+  }, []);
+
+  const exclusivas = roupas?.filter(item => {
+    return item[1].categoria === 'pecas exclusivas'
+  })
+
   return (
     <>
       <Container>
@@ -36,12 +48,14 @@ export default function Home() {
       <Container>
         <Titulo text1='Peças' text2='Exclusivas' />
         <S.Section>
-          {mockPecasExclusivas.map(item => {
+          {exclusivas?.map(item => {
             return (
               <CardProdutos
-                roupa={item.roupa}
-                valor={item.valor}
-                img={item.img} />
+                roupa={item[1].roupa}
+                valor={`R$${item[1].valor}`}
+                img={item[1].img} 
+                action={() => Submit(`/produto?${item[0]}`)}
+                />
             )
           })}
         </S.Section>
