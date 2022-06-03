@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { Titulo } from "../components/Titulo";
 import { Container } from '../components/Container'
@@ -16,7 +16,7 @@ export default function Home() {
   }, []);
 
   const exclusivas = roupas?.filter(item => {
-    return item[1].categoria === 'pecas exclusivas'
+    return item[1].categoria === 'peças exclusivas'
   })
 
   return (
@@ -53,9 +53,9 @@ export default function Home() {
               <CardProdutos
                 roupa={item[1].roupa}
                 valor={`R$${item[1].valor}`}
-                img={item[1].img} 
+                img={item[1].img}
                 action={() => Submit(`/produto?${item[0]}`)}
-                />
+              />
             )
           })}
         </S.Section>

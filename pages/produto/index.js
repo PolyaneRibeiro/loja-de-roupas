@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { Titulo } from "../../components/Titulo";
 import { Container } from '../../components/Container'
-import { mockProduto } from '../../utils'
 import { Button } from '../../components/Button'
 import { TamanhoQnt } from '../../components/TamanhoQnt';
 import * as S from '../style'

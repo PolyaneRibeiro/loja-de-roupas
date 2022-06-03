@@ -1,18 +1,19 @@
 import React from 'react';
 import * as S from './style'
+import { mockMeuLateral } from '../../utils'
 
-export const MenuLateral = () => {
+export const MenuLateral = ({ action, data }) => {
     return (
         <S.Main>
-        <S.TituloleCategorias>Categorias</S.TituloleCategorias>
-        <S.UlCategorias>
-            <S.LiCategorias>camisetas</S.LiCategorias>
-            <S.LiCategorias>cropet</S.LiCategorias>
-            <S.LiCategorias>calças</S.LiCategorias>
-            <S.LiCategorias>body</S.LiCategorias>
-            <S.LiCategorias>casacos</S.LiCategorias>
-            <S.LiCategorias>peças exclusivas</S.LiCategorias>
-        </S.UlCategorias>
+            <S.TituloleCategorias>Categorias</S.TituloleCategorias>
+            <S.UlCategorias>
+                {mockMeuLateral.map(item => {
+                    return (
+                        <S.LiCategorias onClick={() => action(item.categoria)}>{item.categoria}</S.LiCategorias>
+
+                    )
+                })}
+            </S.UlCategorias>
         </S.Main>
     )
 }

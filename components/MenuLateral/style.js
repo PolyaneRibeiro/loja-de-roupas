@@ -24,6 +24,7 @@ export const LiCategorias = styled.li`
     list-style-type: none;
     border-bottom: 3px dotted #fde3e3;
     padding: 10px 0 10px 6px;
+    cursor: pointer;
 `;
 
 export const UlCategorias = styled.ul`

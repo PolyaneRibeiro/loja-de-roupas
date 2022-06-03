@@ -43,12 +43,23 @@ export const mockMarcas = [
     },
 ]
 
-export const mockProduto = {
-    roupa: 'BODY SUÉCIA',
-    valor: 'R$199,99',
-    img: './body.jpg',
-    descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus nulla viverra, cursus nulla eu, ultricies nulla. Nulla facilisi. Nam felis massa, gravida non condimentum eget, vulputate eget eros. Maecenas id nibh eget urna venenatis hendrerit nec ac nibh. Proin fermentum erat eu mi dictum congue'
-}
+export const mockMeuLateral = [
+    {
+        categoria: 'camisetas'
+    },
+    {
+        categoria: 'cropped'
+    },
+    {
+        categoria: 'calças'
+    },
+    {
+        categoria: 'body'
+    },
+    {
+        categoria: 'peças exclusivas'
+    },
+]
 
 
 export const Submit = (page) => {
