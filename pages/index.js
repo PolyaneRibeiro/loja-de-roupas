@@ -22,7 +22,11 @@ export default function Home() {
   return (
     <>
       <Container>
-        <img src='./banner.jpg' />
+        <S.Section>
+          <S.ImgBanner onClick={() => Submit(`/loja`)} src='./banner1.jpg' />
+          <S.ImgBanner onClick={() => Submit(`/loja`)} src='./banner2.jpg' />
+          <S.ImgBanner src='./banner3.jpg' />
+        </S.Section>
       </Container>
       <S.ContainerRose>
         <BoxTendencia

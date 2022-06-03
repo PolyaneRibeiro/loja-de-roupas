@@ -54,6 +54,9 @@ export const mockMeuLateral = [
         categoria: 'calças'
     },
     {
+        categoria: 'casacos'
+    },
+    {
         categoria: 'body'
     },
     {

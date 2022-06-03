@@ -13,6 +13,10 @@ export const ContainerRose = styled.div`
     height: 410px;
 `;
 
+export const ImgBanner = styled.img`
+    cursor: pointer;
+`;
+
 
 //pg loja
 export const Produtos = styled.div`

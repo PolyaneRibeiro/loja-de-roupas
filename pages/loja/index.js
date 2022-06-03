@@ -4,7 +4,7 @@ import { Titulo } from "../../components/Titulo";
 import { Container } from '../../components/Container'
 import { CardProdutos } from "../../components/CardProdutos";
 import { MenuLateral } from '../../components/MenuLateral';
-import { Submit, mockMeuLateral } from '../../utils'
+import { Submit } from '../../utils'
 
 import * as S from '../style'
 
@@ -27,12 +27,6 @@ export default function Loja() {
     setFiltro(filterRoupas)
   }
 
-  // const mapMenuLateral =
-  //   mockMeuLateral.map(item => {
-  //     console.log(item.categoria)
-  //     return item.categoria
-  //   })
-
   return (
     <>
       <Container>
@@ -40,9 +34,7 @@ export default function Loja() {
         <S.Section align='start'>
           <MenuLateral
             action={handleRoupas}
-            data={mockMeuLateral}
           />
-          {console.log(mockMeuLateral, 'mockMeuLateral')}
           <S.Produtos>
             {filtro && filtro.map(item => {
               return (
