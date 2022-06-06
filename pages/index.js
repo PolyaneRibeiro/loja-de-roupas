@@ -66,9 +66,9 @@ export default function Home() {
         </S.Section>
         <Titulo text1='Marcas' text2='Vendidas' />
         <S.Section >
-          {mockMarcas.map(item => {
+          {mockMarcas.map((item, index) => {
             return (
-              <img src={item.logo} />
+              <img src={item.logo} key={index} />
             )
           })}
         </S.Section>

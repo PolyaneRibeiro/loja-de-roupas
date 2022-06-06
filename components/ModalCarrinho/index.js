@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../Button'
 import { mockPecasExclusivas } from '../../utils'
+import axios from 'axios';
 import * as S from './style'
 
 

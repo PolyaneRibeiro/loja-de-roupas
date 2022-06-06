@@ -10,6 +10,7 @@ import * as S from '../style'
 
 export default function Loja() {
   const [roupas, setRoupas] = useState()
+  const [filtro, setFiltro] = useState()
 
   useEffect(() => {
     axios.get('https://poly-2af89-default-rtdb.firebaseio.com/loja.json')
