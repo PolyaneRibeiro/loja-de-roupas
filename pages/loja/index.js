@@ -10,7 +10,6 @@ import * as S from '../style'
 
 export default function Loja() {
   const [roupas, setRoupas] = useState()
-  const [filtro, setFiltro] = useState()
 
   useEffect(() => {
     axios.get('https://poly-2af89-default-rtdb.firebaseio.com/loja.json')
@@ -42,7 +41,9 @@ export default function Loja() {
                   img={item[1].img}
                   roupa={item[1].roupa}
                   valor={`R$${item[1].valor}`}
-                  action={() => Submit(`/produto?${item[0]}`)} />
+                  action={() => Submit(`/produto?${item[0]}`)}
+                  key={item[0]}
+                />
               )
             })}
           </S.Produtos>

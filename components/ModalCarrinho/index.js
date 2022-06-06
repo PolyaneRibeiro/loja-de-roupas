@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../Button'
 import { mockPecasExclusivas } from '../../utils'
 import * as S from './style'
 
 
 export const ModalCarrinho = ({ open, close }) => {
+    const [carrinho, setCarrinho] = useState()
+
+    useEffect(() => {
+        axios.get('https://poly-2af89-default-rtdb.firebaseio.com/carrinho.json')
+            .then((response) => {
+                setCarrinho(Object.entries(response.data))
+            })
+    }, []);
+
     return (
         <>
             {open &&
                 <>
                     <S.Background onClick={close}></S.Background>
-                    <S.MainCarrinho>
+                    <S.MainCarrinho onClick={laranja}>
                         <S.BoxCarrinho>
-                            {mockPecasExclusivas.map(item => {
+                            {mockPecasExclusivas.map((item, index) => {
                                 return (
-                                    <S.CardCarrinho>
+                                    <S.CardCarrinho key={index}>
                                         <S.Thumbnail src={item.img}></S.Thumbnail>
                                         <div>
                                             <S.Titulo>{item.roupa} - P</S.Titulo>

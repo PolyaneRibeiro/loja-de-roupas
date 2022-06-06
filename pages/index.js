@@ -59,6 +59,7 @@ export default function Home() {
                 valor={`R$${item[1].valor}`}
                 img={item[1].img}
                 action={() => Submit(`/produto?${item[0]}`)}
+                key={item[0]}
               />
             )
           })}

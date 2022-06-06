@@ -9,16 +9,17 @@ import * as S from '../style'
 export default function Produto() {
   const [roupa, seRoupa] = useState()
 
-  if (typeof window !== "undefined") {
-    const url = window.location.href
-    const splitUrl = url.split('?')
-    const id = splitUrl[1]
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const url = window.location.href
+      const splitUrl = url.split('?')
+      const id = splitUrl[1]
 
-    useEffect(() => {
       axios.get(`https://poly-2af89-default-rtdb.firebaseio.com/loja/${id}.json`)
         .then((response) => seRoupa(response.data))
-    }, []);
-  }
+
+    }
+  }, []);
 
   return (
     <Container>
