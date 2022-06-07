@@ -32,7 +32,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
       tamanho: tamanho,
 
     })
-      .then(() => { setOpen(true), setMapeamento(!mapeamento) })
+      .then(() => { setMapeamento(!mapeamento), setOpen(true) })
       .catch(() => alert('não foi possível cadastrar a série'))
 
   }
