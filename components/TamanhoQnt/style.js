@@ -11,7 +11,7 @@ export const Box = styled.div`
 
 export const Section = styled.div`
    display: flex;
-   justify-content: 'space-between'};
+   justify-content: 'space-between';
    align-items: center;
 `;
 
