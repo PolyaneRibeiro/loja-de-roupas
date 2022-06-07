@@ -4,12 +4,10 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ModalCarrinho } from '../ModalCarrinho';
 import * as S from './style'
 
-export const Menu = () => {
-    const [open, setOpen] = useState(false)
-
+export const Menu = ({ open, setOpen, mapeamento }) => {
     return (
         <>
-            <ModalCarrinho open={open} close={() => setOpen(false)} />
+            <ModalCarrinho open={open} close={() => setOpen(false)} mapeamento={mapeamento} />
             <S.Main>
                 <Container>
                     <S.Box>

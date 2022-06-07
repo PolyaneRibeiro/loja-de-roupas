@@ -2,21 +2,21 @@ import React from 'react';
 import { Container } from '../Container';
 import * as S from './style'
 
-export const TamanhoQnt = () => {
+export const TamanhoQnt = ({ onChange, setTamanho }) => {
     return (
         <S.Main>
             <S.Box>
                 <S.SubTitulo>Tamanho</S.SubTitulo>
                 <S.Section justify='start'>
-                    <S.Tamanhos>P</S.Tamanhos>
-                    <S.Tamanhos>M</S.Tamanhos>
-                    <S.Tamanhos>G</S.Tamanhos>
+                    <S.Tamanhos onClick={() => setTamanho('P')}>P</S.Tamanhos>
+                    <S.Tamanhos onClick={() => setTamanho('M')}>M</S.Tamanhos>
+                    <S.Tamanhos onClick={() => setTamanho('G')}>G</S.Tamanhos>
                 </S.Section>
             </S.Box>
             <S.Box>
                 <S.SubTitulo>Quantidade</S.SubTitulo>
                 <form>
-                    <S.InputQnt />
+                    <S.InputQnt onChange={onChange} />
                 </form>
             </S.Box>
         </S.Main>

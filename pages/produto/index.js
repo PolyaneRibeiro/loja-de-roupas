@@ -6,8 +6,10 @@ import { Button } from '../../components/Button'
 import { TamanhoQnt } from '../../components/TamanhoQnt';
 import * as S from '../style'
 
-export default function Produto() {
+export default function Produto({ setOpen, mapeamento, setMapeamento }) {
   const [roupa, seRoupa] = useState()
+  const [quantidade, setQuantidade] = useState()
+  const [tamanho, setTamanho] = useState()
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -21,6 +23,20 @@ export default function Produto() {
     }
   }, []);
 
+  const addCarrinho = () => {
+    axios.post(`https://poly-2af89-default-rtdb.firebaseio.com/carrinho.json`, {
+      roupa: roupa.roupa,
+      valor: roupa.valor,
+      img: roupa.img,
+      quantidade: quantidade,
+      tamanho: tamanho,
+
+    })
+      .then(() => { setOpen(true), setMapeamento(!mapeamento) })
+      .catch(() => alert('não foi possível cadastrar a série'))
+
+  }
+
   return (
     <Container>
       <S.Section align='start' justify='start'>
@@ -29,8 +45,8 @@ export default function Produto() {
           <Titulo text1={roupa?.roupa} />
           <S.Descricao>{roupa?.descricao}</S.Descricao>
           <S.Valor> {`R$${roupa?.valor}`}</S.Valor>
-          <TamanhoQnt />
-          <Button text='Comprar' />
+          <TamanhoQnt onChange={(e) => setQuantidade(e.target.value)} setTamanho={setTamanho} />
+          <Button text='Comprar' action={() => addCarrinho()} />
         </S.Conteudo>
       </S.Section>
     </Container>

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../Button'
-import { mockPecasExclusivas } from '../../utils'
 import axios from 'axios';
 import * as S from './style'
 
 
-export const ModalCarrinho = ({ open, close }) => {
+export const ModalCarrinho = ({ open, close, mapeamento }) => {
     const [carrinho, setCarrinho] = useState()
 
     useEffect(() => {
@@ -13,7 +12,7 @@ export const ModalCarrinho = ({ open, close }) => {
             .then((response) => {
                 setCarrinho(Object.values(response.data))
             })
-    }, []);
+    }, [mapeamento]);
 
     return (
         <>
@@ -27,7 +26,7 @@ export const ModalCarrinho = ({ open, close }) => {
                                     <S.CardCarrinho key={index}>
                                         <S.Thumbnail src={item.img}></S.Thumbnail>
                                         <div>
-                                            <S.Titulo>{item.roupa} - P</S.Titulo>
+                                            <S.Titulo>{item.roupa} - {item.tamanho}</S.Titulo>
                                             <S.Conteudo>
                                                 <S.Quantidade>Quantidade: {item.quantidade}</S.Quantidade>
                                                 <S.Valor>R${item.valor}</S.Valor>
