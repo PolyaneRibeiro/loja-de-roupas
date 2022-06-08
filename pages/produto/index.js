@@ -10,6 +10,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
   const [roupa, seRoupa] = useState()
   const [quantidade, setQuantidade] = useState()
   const [tamanho, setTamanho] = useState()
+  const [teste, setTeste] = useState([])
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -37,6 +38,29 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
 
   }
 
+  const carrinhoStorage = async (imagem, nome, preco) => {
+    await setTeste([...teste,
+    {
+      img: imagem,
+      titulo: nome,
+      valor: preco,
+      tamanho: tamanho,
+      quantidade: quantidade
+    }
+    ])
+
+  }
+
+  useEffect(() => {
+    const response = localStorage.getItem('array');
+    setTeste(JSON.parse(response))
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("array", JSON.stringify(teste));
+  }, [teste]);
+
+
   return (
     <Container>
       <S.Section align='start' justify='start'>
@@ -46,7 +70,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
           <S.Descricao>{roupa?.descricao}</S.Descricao>
           <S.Valor> {`R$${roupa?.valor}`}</S.Valor>
           <TamanhoQnt onChange={(e) => setQuantidade(e.target.value)} setTamanho={setTamanho} />
-          <Button text='Comprar' action={() => addCarrinho()} />
+          <Button text='Comprar' action={() => carrinhoStorage(roupa?.img, roupa?.roupa, roupa?.valor)} />
         </S.Conteudo>
       </S.Section>
     </Container>

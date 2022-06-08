@@ -5,7 +5,7 @@ import { Container } from '../../components/Container'
 import { CardProdutos } from "../../components/CardProdutos";
 import { MenuLateral } from '../../components/MenuLateral';
 import { Submit } from '../../utils'
-
+import { useRouter } from "next/router"
 import * as S from '../style'
 
 export default function Loja() {
@@ -27,6 +27,13 @@ export default function Loja() {
     setFiltro(filterRoupas)
   }
 
+  const router = useRouter()
+
+  const Submit2 = (page) => {
+    router.push(page)
+  }
+
+
   return (
     <>
       <Container>
@@ -42,7 +49,7 @@ export default function Loja() {
                   img={item[1].img}
                   roupa={item[1].roupa}
                   valor={`R$${item[1].valor}`}
-                  action={() => Submit(`/produto?${item[0]}`)}
+                  action={() => Submit2(`/produto?${item[0]}`)}
                   key={item[0]}
                 />
               )
