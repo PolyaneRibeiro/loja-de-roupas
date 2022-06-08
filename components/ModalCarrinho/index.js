@@ -22,6 +22,7 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
                     <S.MainCarrinho>
                         <S.BoxCarrinho>
                             {carrinho.map((item, index) => {
+                                {console.log(parseFloat(item.valor))}
                                 return (
                                     <S.CardCarrinho key={index}>
                                         <S.Thumbnail src={item.img}></S.Thumbnail>
@@ -29,7 +30,7 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
                                             <S.Titulo>{item.roupa} - {item.tamanho}</S.Titulo>
                                             <S.Conteudo>
                                                 <S.Quantidade>Quantidade: {item.quantidade}</S.Quantidade>
-                                                <S.Valor>R${item.valor}</S.Valor>
+                                                <S.Valor>R${parseFloat(item.valor)*item.quantidade}</S.Valor>
                                             </S.Conteudo>
                                         </div>
                                     </S.CardCarrinho>
