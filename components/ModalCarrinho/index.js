@@ -8,11 +8,15 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
     const [carrinho, setCarrinho] = useState()
 
     useEffect(() => {
-        axios.get('https://poly-2af89-default-rtdb.firebaseio.com/carrinho.json')
-            .then((response) => {
-                setCarrinho(Object.values(response.data))
-            })
+        setTimeout(() => {
+            const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
+            setCarrinho(JSON.parse(response))
+        }, 10)
     }, [mapeamento]);
+
+    console.log(carrinho, 'carrinho')
+    console.log(mapeamento, 'mapeamento')
+
 
     return (
         <>
@@ -21,22 +25,26 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
                     <S.Background onClick={close}></S.Background>
                     <S.MainCarrinho>
                         <S.BoxCarrinho>
-                            {carrinho.map((item, index) => {
-                                {console.log(parseFloat(item.valor))}
-                                return (
-                                    <S.CardCarrinho key={index}>
-                                        <S.Thumbnail src={item.img}></S.Thumbnail>
-                                        <div>
-                                            <S.Titulo>{item.roupa} - {item.tamanho}</S.Titulo>
-                                            <S.Conteudo>
-                                                <S.Quantidade>Quantidade: {item.quantidade}</S.Quantidade>
-                                                <S.Valor>R${parseFloat(item.valor)*item.quantidade}</S.Valor>
-                                            </S.Conteudo>
-                                        </div>
-                                    </S.CardCarrinho>
-                                )
-                            })}
-                            <Button text='Ir para o Carrinho' width='200px' />
+                            {carrinho?.length > 0 ? (
+                                <>
+                                    {carrinho.map((item, index) => {
+                                        return (
+                                            <S.CardCarrinho key={index}>
+                                                <S.Thumbnail src={item.img}></S.Thumbnail>
+                                                <div>
+                                                    <S.Titulo>{item.roupa} - {item.tamanho}</S.Titulo>
+                                                    <S.Conteudo>
+                                                        <S.Quantidade>Quantidade: {item.quantidade}</S.Quantidade>
+                                                        <S.Valor>R${item.valor}</S.Valor>
+                                                    </S.Conteudo>
+                                                </div>
+                                            </S.CardCarrinho>
+                                        )
+                                    })}
+
+                                    <Button text='Ir para o Carrinho' width='200px' />
+                                </>
+                            ) : <p>Não há pedidos no carrinho</p>}
                         </S.BoxCarrinho>
                     </S.MainCarrinho>
 

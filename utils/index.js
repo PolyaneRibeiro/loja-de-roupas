@@ -68,17 +68,8 @@ export const mockMeuLateral = [
 
 
 export const Submit = (page) => {
-    const router = useRouter()
     if (typeof window !== "undefined") {
         window.location.href = page
     }
-
-}
-
-export const Submit2 = (page) => {
-    const router = useRouter()
-    // if (typeof window !== "undefined") {
-    router.push(page)
-    // }
 
 }

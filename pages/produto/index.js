@@ -10,11 +10,25 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
   const [roupa, seRoupa] = useState()
   const [quantidade, setQuantidade] = useState()
   const [tamanho, setTamanho] = useState()
-  const [teste, setTeste] = useState([])
+
+  const responseStorage = () => {
+    const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
+    if (response === null) {
+      return ([])
+    }
+    else return (JSON.parse(response))
+  }
+
+  const [addCarrinho, setAddCarrinho] = useState(responseStorage)
+
+  useEffect(() => {
+    localStorage.setItem("carrinho", JSON.stringify(addCarrinho));
+  }, [addCarrinho]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const url = window.location.href
+
       const splitUrl = url.split('?')
       const id = splitUrl[1]
 
@@ -24,42 +38,19 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
     }
   }, []);
 
-  const addCarrinho = () => {
-    axios.post(`https://poly-2af89-default-rtdb.firebaseio.com/carrinho.json`, {
-      roupa: roupa.roupa,
-      valor: roupa.valor,
-      img: roupa.img,
-      quantidade: quantidade,
-      tamanho: tamanho,
-
-    })
-      .then(() => { setMapeamento(!mapeamento), setOpen(true) })
-      .catch(() => alert('não foi possível cadastrar a série'))
-
-  }
-
-  const carrinhoStorage = async (imagem, nome, preco) => {
-    await setTeste([...teste,
+  const carrinhoStorage = (imagem, nome, preco) => {
+    setAddCarrinho([...addCarrinho,
     {
       img: imagem,
-      titulo: nome,
+      roupa: nome,
       valor: preco,
       tamanho: tamanho,
       quantidade: quantidade
     }
     ])
-
+    setMapeamento(!mapeamento)
+    setOpen(true)
   }
-
-  useEffect(() => {
-    const response = localStorage.getItem('array');
-    setTeste(JSON.parse(response))
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("array", JSON.stringify(teste));
-  }, [teste]);
-
 
   return (
     <Container>
