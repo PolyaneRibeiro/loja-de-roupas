@@ -59,7 +59,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
         <S.Conteudo>
           <Titulo text1={roupa?.roupa} />
           <S.Descricao>{roupa?.descricao}</S.Descricao>
-          <S.Valor> {`R$${roupa?.valor}`}</S.Valor>
+          <S.Valor> {`R$ ${roupa?.valor}`}</S.Valor>
           <TamanhoQnt onChange={(e) => setQuantidade(e.target.value)} setTamanho={setTamanho} />
           <Button text='Comprar' action={() => carrinhoStorage(roupa?.img, roupa?.roupa, roupa?.valor)} />
         </S.Conteudo>

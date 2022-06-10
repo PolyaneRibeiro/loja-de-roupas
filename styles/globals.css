@@ -20,6 +20,19 @@ p {
   font-weight: 300
 }
 
+label {
+  color: #988084;
+}
+
+input {
+  color: #988084;
+  border: 1px solid #988084;
+}
+
+input:focus-visible {
+  outline-color: #ff9999;
+}
+
 h2 {
   color: #ffafb8;
   font-size: 20px;

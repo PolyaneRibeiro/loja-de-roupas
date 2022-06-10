@@ -49,15 +49,8 @@ export const Tamanhos = styled.button`
 
 export const InputQnt = styled.input`
     font-family: 'Oswald', sans-serif;
-    color: #988084;
-    border: 1px solid #988084;
     width: 40px;
     height: 30px;
     font-size: 20px;
     text-align: center;
-
-    :focus-visible {
-        outline-color: #ff9999;
-      }
-
 `;

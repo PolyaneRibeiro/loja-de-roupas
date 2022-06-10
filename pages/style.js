@@ -5,6 +5,7 @@ export const Section = styled.div`
    display: flex;
    justify-content: ${({ justify }) => justify ? justify : 'space-between'};
    align-items: ${({ align }) => align ? align : 'center'};
+   flex-wrap: ${({ wrap }) => wrap ? wrap : ''};
 `;
 
 //home
@@ -47,3 +48,25 @@ export const ImgRoupa = styled.img`
 export const Descricao = styled.p`
     line-height: 22px;    
 `;
+
+//pg fechar pedido
+export const ProdutosPedido = styled.div`
+   width: 55%;
+`;
+
+export const FecharPedido = styled.div`
+   width: 40%;
+`;
+
+export const Total = styled.p`
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color: #988084;
+    text-align: center;
+
+    span{
+        color: #ff9999;
+    }
+`;
+

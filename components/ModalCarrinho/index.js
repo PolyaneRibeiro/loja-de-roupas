@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../Button'
-import axios from 'axios';
+import { Submit } from '../../utils';
 import * as S from './style'
 
 
@@ -13,10 +13,6 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
             setCarrinho(JSON.parse(response))
         }, 10)
     }, [mapeamento]);
-
-    console.log(carrinho, 'carrinho')
-    console.log(mapeamento, 'mapeamento')
-
 
     return (
         <>
@@ -35,14 +31,14 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
                                                     <S.Titulo>{item.roupa} - {item.tamanho}</S.Titulo>
                                                     <S.Conteudo>
                                                         <S.Quantidade>Quantidade: {item.quantidade}</S.Quantidade>
-                                                        <S.Valor>R${item.valor}</S.Valor>
+                                                        <S.Valor>R$ {parseFloat(item.valor) * (item.quantidade)}</S.Valor>
                                                     </S.Conteudo>
                                                 </div>
                                             </S.CardCarrinho>
                                         )
                                     })}
 
-                                    <Button text='Ir para o Carrinho' width='200px' />
+                                    <Button text='Fechar Pedido' width='180px' action={() => Submit('/fechar-pedido')} />
                                 </>
                             ) : <p>Não há pedidos no carrinho</p>}
                         </S.BoxCarrinho>
