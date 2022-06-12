@@ -38,7 +38,7 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
                                         )
                                     })}
 
-                                    <Button text='Fechar Pedido' width='180px' action={() => Submit('/fechar-pedido')} />
+                                    <Button text='Ir para o Carrinho' width='180px' action={() => Submit('/fechar-pedido')} />
                                 </>
                             ) : <p>Não há pedidos no carrinho</p>}
                         </S.BoxCarrinho>

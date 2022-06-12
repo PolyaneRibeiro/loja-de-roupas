@@ -24,6 +24,8 @@ export const SubTitulo = styled.p`
 `;
 
 export const Tamanhos = styled.button`
+
+
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
@@ -39,6 +41,12 @@ export const Tamanhos = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    ${({ active }) => active && 
+    `background: #ff9999;
+    color: #fff;
+    border: 0;`
+    };
 
     :hover{
         background: #ff9999;
@@ -49,8 +57,10 @@ export const Tamanhos = styled.button`
 
 export const InputQnt = styled.input`
     font-family: 'Oswald', sans-serif;
-    width: 40px;
+    width: 50px;
     height: 30px;
     font-size: 20px;
     text-align: center;
+
+    
 `;
