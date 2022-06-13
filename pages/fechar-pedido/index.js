@@ -7,6 +7,12 @@ import { Button } from '../../components/Button';
 import { Submit } from '../../utils';
 import * as S from '../style'
 
+// var numeros = [{"img":"./loja/bota1.jpg","roupa":"BOTA CHICO BENTO","valor":249.90,"tamanho":"G","quantidade":"1"},{"img":"./loja/bota1.jpg","roupa":"BOTA CHICO BENTO","valor":249.90,"tamanho":"M","quantidade":"2"}];
+// var total = numeros.reduce(function(total, numero){
+// return total + numero.valor;
+// }, 0);
+// console.log(total);
+
 export default function FecharPedido() {
   const [carrinho, setCarrinho] = useState()
 
