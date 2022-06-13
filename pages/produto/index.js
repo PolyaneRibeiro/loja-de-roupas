@@ -8,9 +8,9 @@ import * as S from '../style'
 
 export default function Produto({ setOpen, mapeamento, setMapeamento }) {
   const [roupa, seRoupa] = useState()
-  const [quantidade, setQuantidade] = useState()
+  const [quantidade, setQuantidade] = useState(1)
   const [tamanho, setTamanho] = useState()
-  const [validacao, setValidacao] = useState()
+  const [validacao, setValidacao] = useState(false)
 
   const responseStorage = () => {
     const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
@@ -40,19 +40,23 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
   }, []);
 
   const carrinhoStorage = (imagem, nome, preco) => {
-    setAddCarrinho([...addCarrinho,
-    {
-      img: imagem,
-      roupa: nome,
-      valor: preco,
-      tamanho: tamanho,
-      quantidade: quantidade
+    if (tamanho !== undefined) {
+      setAddCarrinho([...addCarrinho,
+      {
+        img: imagem,
+        roupa: nome,
+        valor: preco,
+        tamanho: tamanho,
+        quantidade: quantidade
+      }
+      ])
+      setMapeamento(!mapeamento)
+      setOpen(true)
+      setValidacao(false)
     }
-    ])
-    setMapeamento(!mapeamento)
-    setOpen(true)
+    else return setValidacao(true)
   }
-
+  console.log(tamanho, 'tamanho')
   return (
     <Container>
       <S.Section align='start' justify='start'>
@@ -61,7 +65,12 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
           <Titulo text1={roupa?.roupa} />
           <S.Descricao>{roupa?.descricao}</S.Descricao>
           <S.Valor> {`R$ ${roupa?.valor}`}</S.Valor>
-          <TamanhoQnt onChange={(e) => setQuantidade(e.target.value)} setTamanho={setTamanho} tamanho={tamanho} />
+          <TamanhoQnt
+            onChange={(e) => setQuantidade(e.target.value)}
+            setTamanho={setTamanho}
+            tamanho={tamanho}
+            validacao={validacao}
+          />
           <Button text='Comprar' action={() => carrinhoStorage(roupa?.img, roupa?.roupa, roupa?.valor)} />
         </S.Conteudo>
       </S.Section>

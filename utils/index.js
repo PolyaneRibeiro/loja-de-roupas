@@ -1,5 +1,3 @@
-import { useRouter } from "next/router"
-
 export const mockPecasExclusivas = [
     {
         roupa: 'BODY SUÉCIA',

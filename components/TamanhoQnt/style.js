@@ -24,8 +24,6 @@ export const SubTitulo = styled.p`
 `;
 
 export const Tamanhos = styled.button`
-
-
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
@@ -42,8 +40,8 @@ export const Tamanhos = styled.button`
     align-items: center;
     justify-content: center;
     
-    ${({ active }) => active && 
-    `background: #ff9999;
+    ${({ active }) => active &&
+        `background: #ff9999;
     color: #fff;
     border: 0;`
     };
@@ -60,7 +58,10 @@ export const InputQnt = styled.input`
     width: 50px;
     height: 30px;
     font-size: 20px;
-    text-align: center;
+    text-align: center;    
+`;
 
-    
+export const Validacao = styled.p`
+    color: red;
+    font-size: 12px;
 `;
