@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../Button'
-import { Submit } from '../../utils';
+import { Submit, TratarValor } from '../../utils';
 import * as S from './style'
 
 
@@ -22,7 +22,7 @@ export const ModalCarrinho = ({ open, close, carrinho }) => {
                                                     <S.Titulo>{item.roupa} - {item.tamanho}</S.Titulo>
                                                     <S.Conteudo>
                                                         <S.Quantidade>Quantidade: {item.quantidade}</S.Quantidade>
-                                                        <S.Valor>R$ {item.valor_total.toFixed(2)}</S.Valor>
+                                                        <S.Valor>R$ {TratarValor(item.valor_total)}</S.Valor>
                                                     </S.Conteudo>
                                                 </div>
                                             </S.CardCarrinho>

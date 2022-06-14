@@ -45,7 +45,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
       {
         img: imagem,
         roupa: nome,
-        valor_unitario: valor,
+        valor_unitario: parseFloat(valor),
         valor_total: parseFloat(valor) * (quantidade),
         tamanho: tamanho,
         quantidade: quantidade

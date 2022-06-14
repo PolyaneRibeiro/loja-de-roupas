@@ -4,7 +4,7 @@ import { Container } from '../../components/Container';
 import { Formulario } from '../../components/Formulario';
 import { Titulo } from '../../components/Titulo';
 import { Button } from '../../components/Button';
-import { Submit } from '../../utils';
+import { Submit, TratarValor } from '../../utils';
 import * as S from '../style'
 
 export default function FecharPedido({ setMapeamento, mapeamento }) {
@@ -28,9 +28,6 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
     return total + pedidos?.valor_total;
   }, 0);
 
-
-  console.log(pedidos, 'pedidos')
-
   return (
     <Container>
       <Titulo text1='Fechar' text2='Pedido' />
@@ -42,10 +39,10 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
                 key={index}
                 img={item.img}
                 roupa={item.roupa}
-                valor={item.valor_total.toFixed(2)}
+                valor={TratarValor(item.valor_total)}
                 quantidade={item.quantidade}
                 tamanho={item.tamanho}
-                valorUnitario={item.valor_unitario}
+                valorUnitario={TratarValor(item.valor_unitario)}
                 action={() => excluir(index)}
               />
             )
@@ -54,9 +51,7 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
         <S.FecharPedido>
           <Formulario />
           <S.Total><span>Total: </span>
-            R$ {total?.toLocaleString("pt-br", {
-              minimumFractionDigits: 2,
-            })}
+            R$ {TratarValor(total)}
           </S.Total>
           <S.Section>
             <Button text='Continuar Comprando' width='210px' action={() => Submit('/loja')} />

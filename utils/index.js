@@ -1,27 +1,3 @@
-export const mockPecasExclusivas = [
-    {
-        roupa: 'BODY SUÉCIA',
-        valor: 'R$199,99',
-        img: './body.jpg'
-    },
-    {
-        roupa: 'BLAZER EUROPA',
-        valor: 'R$209,90',
-        img: './blazer.jpg'
-    },
-
-    {
-        roupa: 'BOTA CHICO BENTO',
-        valor: 'R$199,99',
-        img: './bota.jpg'
-    },
-    {
-        roupa: 'JEANS MOM',
-        valor: 'R$149,99',
-        img: './jeans.jpg'
-    },
-]
-
 export const mockMarcas = [
     {
         logo: './marca1.jpg'
@@ -69,5 +45,11 @@ export const Submit = (page) => {
     if (typeof window !== "undefined") {
         window.location.href = page
     }
+}
 
+export const TratarValor = (value) => {
+    const valorTratado = value?.toLocaleString("pt-br", {
+        minimumFractionDigits: 2,
+    })
+    return valorTratado
 }
