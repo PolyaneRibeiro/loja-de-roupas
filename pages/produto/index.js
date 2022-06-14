@@ -4,6 +4,7 @@ import { Titulo } from "../../components/Titulo";
 import { Container } from '../../components/Container'
 import { Button } from '../../components/Button'
 import { TamanhoQnt } from '../../components/TamanhoQnt';
+import { TratarValor } from '../../utils';
 import * as S from '../style'
 
 export default function Produto({ setOpen, mapeamento, setMapeamento }) {
@@ -65,7 +66,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
         <S.Conteudo>
           <Titulo text1={roupa?.roupa} />
           <S.Descricao>{roupa?.descricao}</S.Descricao>
-          <S.Valor> {`R$ ${roupa?.valor}`}</S.Valor>
+          <S.Valor> {`R$ ${TratarValor(parseFloat(roupa?.valor))}`}</S.Valor>
           <TamanhoQnt
             onChange={(e) => setQuantidade(e.target.value)}
             setTamanho={setTamanho}

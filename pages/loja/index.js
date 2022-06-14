@@ -4,7 +4,7 @@ import { Titulo } from "../../components/Titulo";
 import { Container } from '../../components/Container'
 import { CardProdutos } from "../../components/CardProdutos";
 import { MenuLateral } from '../../components/MenuLateral';
-import { Submit } from '../../utils'
+import { Submit, TratarValor } from '../../utils'
 import * as S from '../style'
 
 export default function Loja() {
@@ -40,7 +40,7 @@ export default function Loja() {
               <CardProdutos
                 img={item[1].img}
                 roupa={item[1].roupa}
-                valor={`R$ ${item[1].valor}`}
+                valor={`R$ ${TratarValor(parseFloat(item[1].valor))}`}
                 action={() => Submit(`/produto?${item[0]}`)}
                 key={item[0]}
               />
