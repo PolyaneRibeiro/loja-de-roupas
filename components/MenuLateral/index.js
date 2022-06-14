@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './style'
 import { mockMeuLateral } from '../../utils'
 
-export const MenuLateral = ({ action, data }) => {
+export const MenuLateral = ({ action }) => {
     return (
         <S.Main>
             <S.TituloleCategorias>Categorias</S.TituloleCategorias>

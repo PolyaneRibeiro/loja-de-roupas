@@ -2,7 +2,7 @@ import React from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 import * as S from './style'
 
-export const CardCarrinho = ({ key, img, roupa, tamanho, quantidade, valor, valorUnitario }) => {
+export const CardCarrinho = ({ key, img, roupa, tamanho, quantidade, valor, valorUnitario, action }) => {
     return (
         <S.CardCarrinho key={key}>
             <S.Thumbnail src={img}></S.Thumbnail>
@@ -13,7 +13,7 @@ export const CardCarrinho = ({ key, img, roupa, tamanho, quantidade, valor, valo
                     <S.Quantidade>Quantidade: {quantidade}</S.Quantidade>
                 </div>
                 <S.Box>
-                    <FaTrashAlt color="#988084" size={20} />
+                    <S.Icon><FaTrashAlt color="#988084" size={20} onClick={action} /></S.Icon>
                     <S.ValorUnitario>Valor Unitário: R$ <span>{valorUnitario}</span></S.ValorUnitario>
                     <S.Valor>R$ {valor}</S.Valor>
                 </S.Box>

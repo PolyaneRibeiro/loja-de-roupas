@@ -57,3 +57,7 @@ export const Box = styled.div`
     flex-direction: column;
     align-items: flex-end;;
 `;
+
+export const Icon = styled.div`
+    cursor: pointer;
+`;

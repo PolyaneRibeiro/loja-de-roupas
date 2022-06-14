@@ -39,13 +39,14 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
     }
   }, []);
 
-  const carrinhoStorage = (imagem, nome, preco) => {
+  const carrinhoStorage = (imagem, nome, valor) => {
     if (tamanho !== undefined) {
       setAddCarrinho([...addCarrinho,
       {
         img: imagem,
         roupa: nome,
-        valor: preco,
+        valor_unitario: valor,
+        valor_total: parseFloat(valor) * (quantidade),
         tamanho: tamanho,
         quantidade: quantidade
       }
@@ -56,7 +57,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
     }
     else return setValidacao(true)
   }
-  console.log(tamanho, 'tamanho')
+
   return (
     <Container>
       <S.Section align='start' justify='start'>

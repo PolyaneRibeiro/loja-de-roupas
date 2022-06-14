@@ -7,42 +7,57 @@ import { Button } from '../../components/Button';
 import { Submit } from '../../utils';
 import * as S from '../style'
 
-// var numeros = [{"img":"./loja/bota1.jpg","roupa":"BOTA CHICO BENTO","valor":249.90,"tamanho":"G","quantidade":"1"},{"img":"./loja/bota1.jpg","roupa":"BOTA CHICO BENTO","valor":249.90,"tamanho":"M","quantidade":"2"}];
-// var total = numeros.reduce(function(total, numero){
-// return total + numero.valor;
-// }, 0);
-// console.log(total);
-
-export default function FecharPedido() {
-  const [carrinho, setCarrinho] = useState()
+export default function FecharPedido({ setMapeamento, mapeamento }) {
+  const [pedidos, setPedidos] = useState()
 
   useEffect(() => {
     const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
-    setCarrinho(JSON.parse(response))
+    setPedidos(JSON.parse(response))
   }, []);
+
+  const excluir = (index) => {
+    const list = [...pedidos];
+    list.splice(index, 1);
+    setPedidos(list);
+    setMapeamento(!mapeamento)
+
+    localStorage.setItem('carrinho', JSON.stringify(list))
+  };
+
+  const total = pedidos?.reduce(function (total, pedidos) {
+    return total + pedidos?.valor_total;
+  }, 0);
+
+
+  console.log(pedidos, 'pedidos')
 
   return (
     <Container>
       <Titulo text1='Fechar' text2='Pedido' />
       <S.Section align='flex-start' >
         <S.ProdutosPedido>
-          {carrinho?.map((item, index) => {
+          {pedidos?.map((item, index) => {
             return (
               <CardCarrinho
                 key={index}
                 img={item.img}
                 roupa={item.roupa}
-                valor={parseFloat(item.valor) * (item.quantidade)}
+                valor={item.valor_total.toFixed(2)}
                 quantidade={item.quantidade}
                 tamanho={item.tamanho}
-                valorUnitario={item.valor}
+                valorUnitario={item.valor_unitario}
+                action={() => excluir(index)}
               />
             )
           })}
         </S.ProdutosPedido>
         <S.FecharPedido>
           <Formulario />
-          <S.Total><span>Total:</span> R$ 150,00</S.Total>
+          <S.Total><span>Total: </span>
+            R$ {total?.toLocaleString("pt-br", {
+              minimumFractionDigits: 2,
+            })}
+          </S.Total>
           <S.Section>
             <Button text='Continuar Comprando' width='210px' action={() => Submit('/loja')} />
             <Button text='Fechar Pedido' />

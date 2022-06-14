@@ -6,7 +6,7 @@ export const Main = styled.div`
 `;
 
 export const Box = styled.div`
-   margin-right: 30px;
+   width: 200px;
 `;
 
 export const Section = styled.div`

@@ -5,6 +5,7 @@ export const Background = styled.div`
     background: rgba(0,0,0,0.7);
     width: 100%;
     height: 100vh;
+    z-index: 1;
 `;
 
 export const MainCarrinho = styled.div`
@@ -23,6 +24,7 @@ export const BoxCarrinho = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 
     :before{
     top: -10px;

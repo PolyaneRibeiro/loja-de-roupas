@@ -4,16 +4,7 @@ import { Submit } from '../../utils';
 import * as S from './style'
 
 
-export const ModalCarrinho = ({ open, close, mapeamento }) => {
-    const [carrinho, setCarrinho] = useState()
-
-    useEffect(() => {
-        setTimeout(() => {
-            const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
-            setCarrinho(JSON.parse(response))
-        }, 10)
-    }, [mapeamento]);
-
+export const ModalCarrinho = ({ open, close, carrinho }) => {
     return (
         <>
             {open &&
@@ -31,7 +22,7 @@ export const ModalCarrinho = ({ open, close, mapeamento }) => {
                                                     <S.Titulo>{item.roupa} - {item.tamanho}</S.Titulo>
                                                     <S.Conteudo>
                                                         <S.Quantidade>Quantidade: {item.quantidade}</S.Quantidade>
-                                                        <S.Valor>R$ {parseFloat(item.valor) * (item.quantidade)}</S.Valor>
+                                                        <S.Valor>R$ {item.valor_total.toFixed(2)}</S.Valor>
                                                     </S.Conteudo>
                                                 </div>
                                             </S.CardCarrinho>
