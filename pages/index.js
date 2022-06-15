@@ -68,7 +68,7 @@ export default function Home() {
         <S.Section >
           {mockMarcas.map((item, index) => {
             return (
-              <img src={item.logo} key={index} />
+              <img src={item} key={index} />
             )
           })}
         </S.Section>

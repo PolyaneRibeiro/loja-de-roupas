@@ -5,7 +5,7 @@ export const Box = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: 70px;
-    margin-right: 53px;
+    margin-right:  ${({ margin }) => margin ? '53px' : '0'};   
 
     :nth-child(3n){
         margin-right: 0;

@@ -47,6 +47,7 @@ export default function Loja() {
                 valor={`R$ ${TratarValor(parseFloat(item[1].valor))}`}
                 action={() => Submit(`/produto?${item[0]}`)}
                 key={item[0]}
+                margin
               />
             )
           })}
