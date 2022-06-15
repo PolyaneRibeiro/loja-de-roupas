@@ -25,6 +25,17 @@ export const LiCategorias = styled.li`
     border-bottom: 3px dotted #fde3e3;
     padding: 10px 0 10px 6px;
     cursor: pointer;
+
+    :hover {
+        background: #ffafb8;
+        color: #fff;
+        
+    }
+
+    ${({ active }) => active && `
+        background: #ffafb8;
+        color: #fff;
+    `};
 `;
 
 export const UlCategorias = styled.ul`

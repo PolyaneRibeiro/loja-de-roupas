@@ -10,6 +10,7 @@ import * as S from '../style'
 export default function Loja() {
   const [roupas, setRoupas] = useState()
   const [filtro, setFiltro] = useState()
+  const [active, setActive] = useState('todos')
 
   useEffect(() => {
     axios.get('https://poly-2af89-default-rtdb.firebaseio.com/loja.json')
@@ -24,6 +25,7 @@ export default function Loja() {
       return item[1].categoria === category
     })
     setFiltro(filterRoupas)
+    setActive(category)
   }
 
 
@@ -33,6 +35,8 @@ export default function Loja() {
       <S.Section align='start'>
         <MenuLateral
           action={handleRoupas}
+          actionTodos={() => { setFiltro(roupas), setActive('todos') }}
+          active={active}
         />
         <S.Produtos>
           {filtro && filtro.map(item => {

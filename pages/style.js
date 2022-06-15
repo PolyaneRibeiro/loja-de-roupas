@@ -22,7 +22,6 @@ export const ImgBanner = styled.img`
 //pg loja
 export const Produtos = styled.div`
    display: flex;
-   justify-content: space-between;
    flex-wrap: wrap;
    width: 75%;
    align-items: center;

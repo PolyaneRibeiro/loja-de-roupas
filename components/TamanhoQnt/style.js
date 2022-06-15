@@ -40,11 +40,11 @@ export const Tamanhos = styled.button`
     align-items: center;
     justify-content: center;
     
-    ${({ active }) => active &&
-        `background: #ff9999;
-    color: #fff;
-    border: 0;`
-    };
+    ${({ active }) => active && `
+        background: #ff9999;
+        color: #fff;
+        border: 0;
+    `};
 
     :hover{
         background: #ff9999;

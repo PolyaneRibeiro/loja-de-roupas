@@ -1,10 +1,15 @@
 import styled from 'styled-components'
 
 export const Box = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 70px;
+    margin-right: 53px;
+
+    :nth-child(3n){
+        margin-right: 0;
+    }
 `;
 
 export const Titulo = styled.p`
