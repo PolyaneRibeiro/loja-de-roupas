@@ -25,7 +25,7 @@ export default function Home() {
         <S.Section>
           <S.ImgBanner onClick={() => Submit(`/loja`)} src='./banner1.jpg' />
           <S.ImgBanner onClick={() => Submit(`/loja`)} src='./banner2.jpg' />
-          <S.ImgBanner src='./banner3.jpg' />
+          <S.ImgBanner onClick={() => Submit(`/tendencias`)} src='./banner3.jpg' />
         </S.Section>
       </Container>
       <S.ContainerRose>
@@ -41,7 +41,7 @@ export default function Home() {
       </S.ContainerRose>
       <BoxTendencia
         tituloTendencia='CASACO TEDDY'
-        text1='Com a queda das temperaturas, o casaco teddy volta a dominar o feed do Instagram. Quentinho, confortável e estiloso, é fácil entender a razão do sucesso do item, que também teve alta significante nas pesquisas do Google.'
+        text1={`Com a queda das temperaturas, o casaco teddy volta a dominar o feed do Instagram. Quentinho, confortável e estiloso, é fácil entender a razão do sucesso do item, que também teve alta significante nas pesquisas do Google.`}
         text2='A modelagem do casaco teddy pode variar e isso torna a tendência ainda mais versátil. Nos anos anteriors, as modelagens alongadas dominaram o street style. Contudo, as mais moderninhas preferem versões curtinhas do casaco, que combinam bastante com looks mais esportivos.'
         img='./casaco-teddy.jpg'
         direction='row-reverse'

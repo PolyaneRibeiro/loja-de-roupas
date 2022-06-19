@@ -28,7 +28,7 @@ export const Menu = ({ open, setOpen, mapeamento }) => {
                         <S.Logo src='./logo.png' />
                         <S.BoxMenu>
                             <a href='/'>HOME</a>
-                            <a href='#'>TENDÊNCIAS</a>
+                            <a href='/tendencias'>TENDÊNCIAS</a>
                             <a href='/loja'>LOJA</a>
                             <S.BoxIcon>
                                 {carrinho?.length > 0 && <S.Quantidade>{carrinho?.length}</S.Quantidade>}
