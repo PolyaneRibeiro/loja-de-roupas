@@ -18,7 +18,7 @@ export const mockTendencia = [
             },
             {
                 img: './loja/cropped1.jpg',
-                texto: 'opcao1'
+                texto: 'opcao'
             },
             {
                 img: './loja/cropped1.jpg',
