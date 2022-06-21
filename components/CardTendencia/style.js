@@ -2,9 +2,17 @@ import styled from 'styled-components'
 
 export const BoxContent = styled.div`
    display: flex;
-   flex-direction: ${({ direction }) => direction ? direction : 'row'};
-   margin-top: ${({ topBox }) => topBox ? topBox : '0'};
-   align-items:  ${({ alignBox }) => alignBox ? alignBox : 'flex-start'};
+`;
+
+export const BoxReferencias = styled.div`
+   display: flex;
+   justify-content: space-between;
+   text-align: center;
+
+   p {
+      font-weight: bold;
+   }
+   
 `;
 
 export const BoxText = styled.div`
@@ -12,8 +20,13 @@ export const BoxText = styled.div`
 `;
 
 export const ImgTendencia = styled.img`
-   margin-top: ${({ topImg }) => topImg ? topImg : '0'};
    margin-left: 30px;
 `;
+
+export const Titulo = styled.h2`
+    font-size: 26px;
+    text-transform: uppercase;
+`;
+
 
 

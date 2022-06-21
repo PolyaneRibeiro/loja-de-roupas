@@ -1,23 +1,37 @@
 import React from 'react';
 import { Container } from '../Container';
+
 import * as S from './style'
 
 export const CardTendencia = ({
     tituloTendencia,
-    children,
+    descricao,
     img,
+    looks
 }) => {
     return (
         <Container>
             <S.BoxContent>
-                <div>
-                    <S.BoxText>
-                        <h2>{tituloTendencia}</h2>
-                        {children}
-                    </S.BoxText>
-                </div>
+                <S.BoxText>
+                    <S.Titulo>{tituloTendencia}</S.Titulo>
+                    <p>{descricao}</p>
+                </S.BoxText>
                 <S.ImgTendencia src={img} />
             </S.BoxContent>
+            <h2>#OPÇÕES DE LOOKS</h2>
+            <S.BoxReferencias>
+                {looks?.map(item => {
+                    return (
+                        <div>
+                            <img src={item.img} />
+                            <p>{item.texto}</p>
+                        </div>
+                    )
+                })
+                }
+
+
+            </S.BoxReferencias>
         </Container>
     )
 }
