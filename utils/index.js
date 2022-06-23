@@ -5,7 +5,12 @@ export const mockMarcas = [
 export const mockTendencia = [
     {
         titulo: 'Cropped de renda',
-        descricao: 'O cropped de renda é uma peça delicada e que voltou com força nesse verão e faz a cabeça de muitas amantes da moda, já que ele pode compor diversos estilos e te levar a vários tipos de ambientes super bem vestida. Além de prático e bonito, o seu modelo vai trazer um ar feminino e sensual. Uma regrinha de ouro para se usar essa peça, é lembrar de tomar cuidado com a transparência. Se optar por um que tenha forro garanta, que sejam da mesma cor (forro e pano da blusinha) caso não, escolha um top que combine. Esta é uma peça tão eclética que pode servir a vários gostos. Por exemplo, se você deseja destacar os seios, ou a barriga, poderá encontrar modelos que de cropped que te ajudarão nessa missão. Temos inúmeras opções para elaborar looks criativos e super elegantes com essas peças lindas que você encontra por aqui e essas cores bastante tradicionais e super em alta nessa época do ano!',
+        descricao: [
+            'O cropped de renda é uma peça delicada e que voltou com força nesse verão e faz a cabeça de muitas amantes da moda, já que ele pode compor diversos estilos e te levar a vários tipos de ambientes super bem vestida.',
+            'Além de prático e bonito, o seu modelo vai trazer um ar feminino e sensual. Uma regrinha de ouro para se usar essa peça, é lembrar de tomar cuidado com a transparência. Se optar por um que tenha forro garanta, que sejam da mesma cor (forro e pano da blusinha) caso não, escolha um top que combine.',
+            'Esta é uma peça tão eclética que pode servir a vários gostos. Por exemplo, se você deseja destacar os seios, ou a barriga, poderá encontrar modelos que de cropped que te ajudarão nessa missão.',
+            'Temos inúmeras opções para elaborar looks criativos e super elegantes com essas peças lindas que você encontra por aqui e essas cores bastante tradicionais e super em alta nessa época do ano!'
+        ],
         imagem: './tendencias/cropped.jpg',
         looks: [
             {

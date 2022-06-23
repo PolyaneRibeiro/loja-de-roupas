@@ -14,7 +14,11 @@ export const CardTendencia = ({
             <S.BoxContent>
                 <S.BoxText>
                     <S.Titulo>{tituloTendencia}</S.Titulo>
-                    <p>{descricao}</p>
+                    {descricao.map(item => {
+                        return (
+                            <p>{item}</p>
+                        )
+                    })}
                 </S.BoxText>
                 <S.ImgTendencia src={img} />
             </S.BoxContent>
