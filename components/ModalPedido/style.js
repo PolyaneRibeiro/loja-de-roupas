@@ -9,11 +9,27 @@ export const Background = styled.div`
 `;
 
 export const Main = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    width: 1220px; 
+    background-color: white;
+    width: 30%;
     margin: 0 auto;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    left: 35%;
+    right: 35%;
+    top: 40%;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
 `;
+
+export const Destaque = styled.p`
+    font-size: 19px;
+    font-weight: bold;
+    color: #ff9999;
+`;
+
+
 
 
 

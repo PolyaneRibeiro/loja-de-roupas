@@ -4,6 +4,7 @@ export const Main = styled.div`
     background: #55474a;
     width: 100%;
     height: 157px;
+    z-index:0;
 `;
 
 export const Box = styled.div`

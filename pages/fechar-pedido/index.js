@@ -36,7 +36,7 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
       pedidos: [...pedidos]
     })
       .then(() => {
-        alert('sua série foi cadastrada')
+        setOpenModal(true)
       })
       .catch(() => alert('não foi possível cadastrar a série'))
   }
@@ -45,6 +45,7 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
 
   return (
     <>
+      <ModalPedido open={openModal} />
       <Container>
         <Titulo text1='Fechar' text2='Pedido' />
         <S.Section align='flex-start' >
@@ -76,7 +77,6 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
           </S.FecharPedido>
         </S.Section>
       </Container>
-      <ModalPedido open={openModal} />
     </>
   )
 }
