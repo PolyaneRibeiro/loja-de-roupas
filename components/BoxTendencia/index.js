@@ -13,7 +13,8 @@ export const BoxTendencia = ({
     direction,
     topBox,
     rightImg,
-    alignBox
+    alignBox,
+    action
 }) => {
     return (
         <Container>
@@ -25,7 +26,7 @@ export const BoxTendencia = ({
                         <p>{text1}</p>
                         <p>{text2}</p>
                     </S.BoxText>
-                    <Button text='Veja Mais' />
+                    <Button text='Veja Mais' action={action} />
                 </div>
                 <S.ImgTendencia src={img} topImg={topImg} rightImg={rightImg} />
             </S.BoxContent>

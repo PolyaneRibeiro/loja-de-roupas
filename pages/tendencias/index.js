@@ -7,20 +7,22 @@ import * as S from '../style'
 
 
 export default function Tendencias() {
-  console.log(mockTendencia, 'mockTendencia')
   return (
     <Container>
       <Titulo text1='Tendências' />
       {mockTendencia.map(item => {
         return (
-          <CardTendencia
-            looks={item.looks}
-            tituloTendencia={item.titulo}
-            descricao={item.descricao}
-            img={item.imagem}
-          />
+          <div id={item.ancora}>
+            <CardTendencia
+              tituloTendencia={item.titulo}
+              descricao={item.descricao}
+              img={item.imagem}
+              looks={item.looks}
+            />
+          </div>
         )
       })}
+
     </Container>
   )
 }

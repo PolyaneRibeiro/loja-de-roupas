@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const BoxContent = styled.div`
    display: flex;
+   align-items: flex-start;
 `;
 
 export const BoxReferencias = styled.div`

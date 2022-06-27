@@ -36,7 +36,7 @@ export default function Home() {
           text2='Além de prático e bonito, o seu modelo vai trazer um ar feminino e sensual...'
           img='./tendencias/cropped.jpg'
           topImg='50px'
-
+          action={() => Submit(`/tendencias/#cropped-renda`)}
         />
       </S.ContainerRose>
       <BoxTendencia
@@ -48,6 +48,7 @@ export default function Home() {
         topBox='40px'
         rightImg='50px'
         alignBox='center'
+        action={() => Submit(`/tendencias/#casaco-teddy`)}
       />
       <Container>
         <Titulo text1='Peças' text2='Exclusivas' />
