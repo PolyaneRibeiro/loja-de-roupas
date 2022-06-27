@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
   const [open, setOpen] = useState(false)
   const [mapeamento, setMapeamento] = useState()
   const [openModal, setOpenModal] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   return (
     <>
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Oswald:wght@700&display=swap" rel="stylesheet" />
       </Head>
-      <ModalPedido open={openModal} />
+      <ModalPedido open={openModal} success={success} action={() => setOpenModal(false)} />
       <Menu open={open} setOpen={setOpen} mapeamento={mapeamento} />
       <Component
         {...pageProps}
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps }) {
         mapeamento={mapeamento}
         setMapeamento={setMapeamento}
         setOpenModal={setOpenModal}
+        setSuccess={setSuccess}
       />
       <Rodape />
     </>

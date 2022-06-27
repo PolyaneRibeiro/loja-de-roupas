@@ -8,7 +8,7 @@ import { Button } from '../../components/Button';
 import { Submit, TratarValor } from '../../utils';
 import * as S from '../style'
 
-export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal }) {
+export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal, setSuccess }) {
   const [pedidos, setPedidos] = useState()
   const [valueEnd, setValueEnd] = useState()
   const [valueNome, setValueNome] = useState()
@@ -16,12 +16,6 @@ export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal }
   const [valueEmail, setValueEmail] = useState()
   const [validacaoNome, setValidacaoNome] = useState(false)
   const [validacaoTel, setValidacaoTel] = useState(false)
-
-  console.log(valueEnd, 'valueEnd')
-  console.log(valueNome, 'valueNome')
-  console.log(valueTel, 'valueTel')
-  console.log(valueEmail, 'valueEmail')
-
 
   useEffect(() => {
     const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
@@ -60,12 +54,13 @@ export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal }
       })
         .then(() => {
           setOpenModal(true)
+          setSuccess(true)
           localStorage.removeItem('carrinho');
           setTimeout(() => {
             Submit('/tendencias')
           }, 5000)
         })
-        .catch(() => alert('não foi possível enviar o pedido'))
+        .catch(() => setOpenModal(true))
     }
   }
 
