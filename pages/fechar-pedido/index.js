@@ -5,13 +5,23 @@ import { Container } from '../../components/Container';
 import { Formulario } from '../../components/Formulario';
 import { Titulo } from '../../components/Titulo';
 import { Button } from '../../components/Button';
-import { ModalPedido } from '../../components/ModalPedido';
 import { Submit, TratarValor } from '../../utils';
 import * as S from '../style'
 
-export default function FecharPedido({ setMapeamento, mapeamento }) {
+export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal }) {
   const [pedidos, setPedidos] = useState()
-  const [openModal, setOpenModal] = useState(false)
+  const [valueEnd, setValueEnd] = useState()
+  const [valueNome, setValueNome] = useState()
+  const [valueTel, setValueTel] = useState()
+  const [valueEmail, setValueEmail] = useState()
+  const [validacaoNome, setValidacaoNome] = useState(false)
+  const [validacaoTel, setValidacaoTel] = useState(false)
+
+  console.log(valueEnd, 'valueEnd')
+  console.log(valueNome, 'valueNome')
+  console.log(valueTel, 'valueTel')
+  console.log(valueEmail, 'valueEmail')
+
 
   useEffect(() => {
     const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
@@ -32,20 +42,38 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
   }, 0);
 
   const enviar = () => {
-    axios.post('https://poly-2af89-default-rtdb.firebaseio.com/pedidos.json', {
-      pedidos: [...pedidos]
-    })
-      .then(() => {
-        setOpenModal(true)
+    if (valueNome === undefined) {
+      setValidacaoNome(true)
+    }
+
+    if (valueTel === undefined) {
+      setValidacaoTel(true)
+    }
+
+    if (valueTel !== undefined && valueNome !== undefined) {
+      axios.post('https://poly-2af89-default-rtdb.firebaseio.com/pedidos.json', {
+        nome: valueNome,
+        telefone: valueTel,
+        email: valueEmail,
+        endereco: valueEnd,
+        pedidos: [...pedidos]
       })
-      .catch(() => alert('não foi possível cadastrar a série'))
+        .then(() => {
+          setOpenModal(true)
+          localStorage.removeItem('carrinho');
+          setTimeout(() => {
+            Submit('/tendencias')
+          }, 5000)
+        })
+        .catch(() => alert('não foi possível enviar o pedido'))
+    }
   }
+
 
 
 
   return (
     <>
-      <ModalPedido open={openModal} />
       <Container>
         <Titulo text1='Fechar' text2='Pedido' />
         <S.Section align='flex-start' >
@@ -66,7 +94,14 @@ export default function FecharPedido({ setMapeamento, mapeamento }) {
             })}
           </S.ProdutosPedido>
           <S.FecharPedido>
-            <Formulario />
+            <Formulario
+              nome={(e) => setValueNome(e.target.value)}
+              telefone={(e) => setValueTel(e.target.value)}
+              email={(e) => setValueEmail(e.target.value)}
+              endereco={(e) => setValueEnd(e.target.value)}
+              validacaoNome={validacaoNome}
+              validacaoTel={validacaoTel}
+            />
             <S.Total><span>Total: </span>
               R$ {TratarValor(total)}
             </S.Total>

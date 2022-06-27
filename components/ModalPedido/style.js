@@ -17,7 +17,7 @@ export const Main = styled.div`
     z-index: 1;
     left: 35%;
     right: 35%;
-    top: 40%;
+    top: 30%;
     border-radius: 20px;
     padding: 20px;
     text-align: center;

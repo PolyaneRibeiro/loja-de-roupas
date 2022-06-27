@@ -15,6 +15,7 @@ export const Box = styled.div`
 
 export const Logo = styled.img`
     margin-top: 15px;
+    cursor: pointer;
 `;
 
 export const BoxMenu = styled.div`

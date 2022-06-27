@@ -3,6 +3,7 @@ import { Container } from '../Container';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ModalCarrinho } from '../ModalCarrinho';
 import * as S from './style'
+import { Submit } from '../../utils';
 
 export const Menu = ({ open, setOpen, mapeamento }) => {
     const [carrinho, setCarrinho] = useState()
@@ -25,7 +26,7 @@ export const Menu = ({ open, setOpen, mapeamento }) => {
             <S.Main>
                 <Container>
                     <S.Box>
-                        <S.Logo src='./logo.png' />
+                        <S.Logo src='./logo.png' onClick={() => Submit('/')} />
                         <S.BoxMenu>
                             <a href='/'>HOME</a>
                             <a href='/tendencias'>TENDÊNCIAS</a>

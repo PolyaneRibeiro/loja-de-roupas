@@ -25,3 +25,10 @@ export const InputPequeno = styled.input`
     height: 25px;
 `;
 
+export const Validacao = styled.p`
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom:0;
+`;
+
