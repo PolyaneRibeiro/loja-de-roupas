@@ -13,10 +13,21 @@ export default function Loja() {
   const [active, setActive] = useState('todos')
 
   useEffect(() => {
+    const url = window.location.href
+    const splitUrl = url.split('?')
+    const splitCategoria = splitUrl[1]
+
     axios.get('https://poly-2af89-default-rtdb.firebaseio.com/loja.json')
       .then((response) => {
         setRoupas(Object.entries(response.data))
-        setFiltro(Object.entries(response.data))
+        if (splitCategoria !== undefined) {
+          const filterRoupasSplit = Object.entries(response.data).filter(item => {
+            return item[1].categoria === splitCategoria
+          })
+          setFiltro(filterRoupasSplit)
+          setActive(splitCategoria)
+        }
+        else { setFiltro(Object.entries(response.data)) }
       })
   }, []);
 
@@ -27,7 +38,6 @@ export default function Loja() {
     setFiltro(filterRoupas)
     setActive(category)
   }
-
 
   return (
     <Container>

@@ -95,22 +95,28 @@ export const mockTendencia = [
 
 export const mockMeuLateral = [
     {
-        categoria: 'camisetas'
+        categoria: 'camisetas',
+        value: 'camisetas'
     },
     {
-        categoria: 'cropped'
+        categoria: 'cropped',
+        value: 'cropped'
     },
     {
-        categoria: 'calças'
+        categoria: 'calças',
+        value: 'calcas'
     },
     {
-        categoria: 'casacos'
+        categoria: 'casacos',
+        value: 'casacos'
     },
     {
-        categoria: 'body'
+        categoria: 'body',
+        value: 'body'
     },
     {
-        categoria: 'peças exclusivas'
+        categoria: 'peças exclusivas',
+        value: 'pecas-exclusivas',
     },
 ]
 

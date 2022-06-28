@@ -16,15 +16,15 @@ export default function Home() {
   }, []);
 
   const exclusivas = roupas?.filter(item => {
-    return item[1].categoria === 'peças exclusivas'
+    return item[1].categoria === 'pecas-exclusivas'
   })
 
   return (
     <>
       <Container>
         <S.Section>
-          <S.ImgBanner onClick={() => Submit(`/loja`)} src='./banner1.jpg' />
-          <S.ImgBanner onClick={() => Submit(`/loja`)} src='./banner2.jpg' />
+          <S.ImgBanner onClick={() => Submit(`/loja?pecas-exclusivas`)} src='./banner1.jpg' />
+          <S.ImgBanner onClick={() => Submit(`/loja?casacos`)} src='./banner2.jpg' />
           <S.ImgBanner onClick={() => Submit(`/tendencias`)} src='./banner3.jpg' />
         </S.Section>
       </Container>

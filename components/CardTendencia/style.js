@@ -29,5 +29,11 @@ export const Titulo = styled.h2`
     text-transform: uppercase;
 `;
 
+export const BoxTendencia = styled.div`
+   padding-bottom: 25px;
+   border-bottom: 3px dotted #ffafb8;
+`;
+
+
 
 

@@ -11,31 +11,31 @@ export const CardTendencia = ({
 }) => {
     return (
         <Container>
-            <S.BoxContent>
-                <S.BoxText>
-                    <S.Titulo>{tituloTendencia}</S.Titulo>
-                    {descricao.map(item => {
+            <S.BoxTendencia>
+                <S.BoxContent>
+                    <S.BoxText>
+                        <S.Titulo>{tituloTendencia}</S.Titulo>
+                        {descricao.map(item => {
+                            return (
+                                <p>{item}</p>
+                            )
+                        })}
+                    </S.BoxText>
+                    <S.ImgTendencia src={img} />
+                </S.BoxContent>
+                <h2>#OPÇÕES DE LOOKS</h2>
+                <S.BoxReferencias>
+                    {looks?.map(item => {
                         return (
-                            <p>{item}</p>
+                            <div>
+                                <img src={item.img} />
+                                <p>{item.texto}</p>
+                            </div>
                         )
-                    })}
-                </S.BoxText>
-                <S.ImgTendencia src={img} />
-            </S.BoxContent>
-            <h2>#OPÇÕES DE LOOKS</h2>
-            <S.BoxReferencias>
-                {looks?.map(item => {
-                    return (
-                        <div>
-                            <img src={item.img} />
-                            <p>{item.texto}</p>
-                        </div>
-                    )
-                })
-                }
-
-
-            </S.BoxReferencias>
+                    })
+                    }
+                </S.BoxReferencias>
+            </S.BoxTendencia>
         </Container>
     )
 }

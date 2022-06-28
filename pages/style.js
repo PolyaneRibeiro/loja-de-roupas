@@ -68,4 +68,3 @@ export const Total = styled.p`
         color: #ff9999;
     }
 `;
-

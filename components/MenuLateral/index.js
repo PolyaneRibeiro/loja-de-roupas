@@ -11,8 +11,8 @@ export const MenuLateral = ({ action, actionTodos, active }) => {
                 {mockMeuLateral.map(item => {
                     return (
                         <S.LiCategorias
-                            onClick={() => action(item.categoria)}
-                            active={active === item.categoria}
+                            onClick={() => action(item.value)}
+                            active={active === item.value}
                         >
                             {item.categoria}
                         </S.LiCategorias>
