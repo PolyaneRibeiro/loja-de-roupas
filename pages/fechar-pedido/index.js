@@ -16,6 +16,8 @@ export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal, 
   const [valueEmail, setValueEmail] = useState()
   const [validacaoNome, setValidacaoNome] = useState(false)
   const [validacaoTel, setValidacaoTel] = useState(false)
+  const [validacaoEmail, setValidacaoEmail] = useState(false)
+  const [validacaoEnd, setValidacaoEnd] = useState(false)
 
   useEffect(() => {
     const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
@@ -38,13 +40,21 @@ export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal, 
   const enviar = () => {
     if (valueNome === undefined) {
       setValidacaoNome(true)
-    }
+    } else { setValidacaoNome(false) }
 
     if (valueTel === undefined) {
       setValidacaoTel(true)
-    }
+    } else { setValidacaoTel(false) }
 
-    if (valueTel !== undefined && valueNome !== undefined) {
+    if (valueEnd === undefined) {
+      setValidacaoEnd(true)
+    } else { setValidacaoEnd(false) }
+
+    if (valueEmail === undefined) {
+      setValidacaoEmail(true)
+    } else { setValidacaoEmail(false) }
+
+    if (valueTel !== undefined && valueNome !== undefined && valueEmail !== undefined && valueEnd !== undefined) {
       axios.post('https://poly-2af89-default-rtdb.firebaseio.com/pedidos.json', {
         nome: valueNome,
         telefone: valueTel,
@@ -96,6 +106,8 @@ export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal, 
               endereco={(e) => setValueEnd(e.target.value)}
               validacaoNome={validacaoNome}
               validacaoTel={validacaoTel}
+              validacaoEnd={validacaoEnd}
+              validacaoEmail={validacaoEmail}
             />
             <S.Total><span>Total: </span>
               R$ {TratarValor(total)}

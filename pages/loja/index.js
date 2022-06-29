@@ -10,7 +10,7 @@ import * as S from '../style'
 export default function Loja() {
   const [roupas, setRoupas] = useState()
   const [filtro, setFiltro] = useState()
-  const [active, setActive] = useState('todos')
+  const [active, setActive] = useState()
 
   useEffect(() => {
     const url = window.location.href
@@ -27,7 +27,10 @@ export default function Loja() {
           setFiltro(filterRoupasSplit)
           setActive(splitCategoria)
         }
-        else { setFiltro(Object.entries(response.data)) }
+        else {
+          setFiltro(Object.entries(response.data))
+          setActive('todos')
+        }
       })
   }, []);
 

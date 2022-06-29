@@ -6,6 +6,7 @@ import { Button } from '../../components/Button'
 import { TamanhoQnt } from '../../components/TamanhoQnt';
 import { TratarValor } from '../../utils';
 import * as S from '../style'
+import { Breadcrumb } from '../../components/Breadcrumb';
 
 export default function Produto({ setOpen, mapeamento, setMapeamento }) {
   const [roupa, seRoupa] = useState()
@@ -61,6 +62,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
 
   return (
     <Container>
+      <Breadcrumb categoriaLink={roupa?.categoria} categoria={roupa?.categoria_label} produto={roupa?.roupa} />
       <S.Section align='start' justify='start'>
         <S.ImgRoupa src={roupa?.img} />
         <S.Conteudo>
