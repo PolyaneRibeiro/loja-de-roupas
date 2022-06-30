@@ -28,3 +28,15 @@ export const Valor = styled.p`
     margin: 0 0 15px 0;
 `;
 
+export const ImagemProduto = styled.img`
+    :hover{
+        transition: all 0.5s;
+        transform: scale(1.2);
+    }
+`;
+export const BoxImagem = styled.div`
+    width: 268px;
+    height: 353px;
+    overflow: hidden;
+`;
+

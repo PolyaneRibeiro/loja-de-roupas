@@ -42,7 +42,12 @@ export const Valor = styled.p`
 
 export const ImgRoupa = styled.img`
     margin-top: 50px;
+    :hover{
+        transition: all 0.5s;
+        transform: scale(1.1);
+    }
 `;
+
 
 export const Descricao = styled.p`
     line-height: 22px;    
