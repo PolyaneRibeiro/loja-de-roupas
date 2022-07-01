@@ -13,6 +13,7 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
   const [quantidade, setQuantidade] = useState(1)
   const [tamanho, setTamanho] = useState()
   const [validacao, setValidacao] = useState(false)
+  const [identifyId, setIdentifyId] = useState()
 
   const responseStorage = () => {
     const response = typeof window !== "undefined" && localStorage.getItem('carrinho')
@@ -34,31 +35,61 @@ export default function Produto({ setOpen, mapeamento, setMapeamento }) {
 
       const splitUrl = url.split('?')
       const id = splitUrl[1]
+      setIdentifyId(id)
+      console.log(identifyId, 'identifyId')
 
       axios.get(`https://poly-2af89-default-rtdb.firebaseio.com/loja/${id}.json`)
         .then((response) => seRoupa(response.data))
 
     }
-  }, []);
+  }, [identifyId]);
 
   const carrinhoStorage = (imagem, nome, valor) => {
-    if (tamanho !== undefined) {
-      setAddCarrinho([...addCarrinho,
-      {
+    const diferente = addCarrinho.filter(item => {
+      return item.id !== identifyId
+    })
+    const diferenteTamanho = addCarrinho.filter(item => {
+      return item.id === identifyId && item.tamanho !== tamanho
+    })
+    const igual = addCarrinho.filter(item => {
+      return item.id === identifyId && item.tamanho === tamanho
+    })
+    if (igual.length > 0) {
+      setAddCarrinho([...diferente, ...diferenteTamanho, {
+        id: identifyId,
         img: imagem,
         roupa: nome,
         valor_unitario: parseFloat(valor),
         valor_total: parseFloat(valor) * (quantidade),
         tamanho: tamanho,
-        quantidade: quantidade
+        quantidade: parseInt(quantidade) + igual[0].quantidade
+      }])
+      setMapeamento(!mapeamento)
+      setOpen(true)
+    }
+
+    if (tamanho !== undefined && igual.length === 0) {
+      setAddCarrinho([...addCarrinho,
+      {
+        id: identifyId,
+        img: imagem,
+        roupa: nome,
+        valor_unitario: parseFloat(valor),
+        valor_total: parseFloat(valor) * (quantidade),
+        tamanho: tamanho,
+        quantidade: parseInt(quantidade)
       }
       ])
       setMapeamento(!mapeamento)
       setOpen(true)
       setValidacao(false)
     }
-    else return setValidacao(true)
+
+    if (tamanho) {
+      return setValidacao(false)
+    } else return setValidacao(true)
   }
+
 
   return (
     <Container>

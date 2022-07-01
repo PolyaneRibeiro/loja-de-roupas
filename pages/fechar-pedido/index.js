@@ -66,9 +66,9 @@ export default function FecharPedido({ setMapeamento, mapeamento, setOpenModal, 
           setOpenModal(true)
           setSuccess(true)
           localStorage.removeItem('carrinho');
-          setTimeout(() => {
-            Submit('/tendencias')
-          }, 8000)
+          // setTimeout(() => {
+          //   Submit('/tendencias')
+          // }, 8000)
         })
         .catch(() => setOpenModal(true))
     }
