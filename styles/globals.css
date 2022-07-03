@@ -27,6 +27,7 @@ label {
 input {
   color: #988084;
   border: 1px solid #988084;
+  height: 25px;
 }
 
 input:focus-visible {

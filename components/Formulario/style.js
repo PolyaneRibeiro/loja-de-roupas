@@ -16,13 +16,9 @@ export const BoxCelCpf = styled.div`
     justify-content: space-between;
 `;
 
-export const Input = styled.input`
-    height: 25px;
-`;
 
 export const InputPequeno = styled.input` 
     width: 220px;
-    height: 25px;
 `;
 
 export const Validacao = styled.p`

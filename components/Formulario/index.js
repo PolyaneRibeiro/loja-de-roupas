@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import InputMask from 'react-input-mask'
 
 import * as S from './style'
 
@@ -6,11 +7,15 @@ import * as S from './style'
 export const Formulario = ({ nome, telefone, email, endereco, validacaoNome, validacaoTel, validacaoEmail, validacaoEnd }) => {
     return (
         <S.BoxForm>
-            <S.Item><label>Nome:</label><S.Input onChange={nome} /> </S.Item>
+            <S.Item><label>Nome:</label><input onChange={nome} /> </S.Item>
             {validacaoNome && <S.Validacao>*Digite seu nome</S.Validacao>}
             <S.BoxCelCpf>
                 <S.Item><label>Telefone:</label>
-                    <S.InputPequeno onChange={telefone} />
+                    <InputMask
+                        type='tel'
+                        mask='(99) 99999-9999'
+                        onChange={telefone}
+                    />
                     {validacaoTel && <S.Validacao>*Digite seu telefone</S.Validacao>}
                 </S.Item>
                 <S.Item>
@@ -18,7 +23,7 @@ export const Formulario = ({ nome, telefone, email, endereco, validacaoNome, val
                     {validacaoEmail && <S.Validacao>*Digite seu E-mail</S.Validacao>}
                 </S.Item>
             </S.BoxCelCpf>
-            <S.Item><label>Endereço:</label><S.Input onChange={endereco} />
+            <S.Item><label>Endereço:</label><input onChange={endereco} />
                 {validacaoEnd && <S.Validacao>*Digite seu Endereço</S.Validacao>}
             </S.Item>
         </S.BoxForm>
